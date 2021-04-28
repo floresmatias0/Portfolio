@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { getVisit } from '../../store/visit/Visit.actions'
 import styles from '../../styles/Code.module.css';
 import '../../styles/Animations/animations.css';
 
-const Code = () => {
+const Code = ({GET_VISIT}) => {
     var aux = [];
     var codes = ["432765","897654","532176"];
     const history = useHistory();
@@ -27,7 +29,6 @@ const Code = () => {
             ...input,
             [e.target.name]: e.target.value
         })
-
         setErrors(validate({
             ...input,
             [e.target.name]: e.target.value
@@ -41,6 +42,7 @@ const Code = () => {
                 name: 'name is required!!'
             })
         }else{
+           GET_VISIT(input.name) 
            setInput({
             ...input,
             [e.target.name]: aux.push(input.name)
@@ -76,7 +78,7 @@ const Code = () => {
                 </form>
             </div>
             <div className={hidden ? styles.display : styles.hiddenCode}>
-                <h2>The code is {codeRandom}</h2>
+                <h2>your code is {codeRandom}</h2>
                 <input disabled value={numberCode} className={styles.inputCode}/>
             </div>
             <div className={hidden ? styles.buttons : styles.hiddenCode}>
@@ -105,4 +107,10 @@ const Code = () => {
     )
 }
 
-export default Code;
+const mapDispatchToProps = (dispatch) => {
+    return{
+        GET_VISIT: (payload) => dispatch(getVisit(payload))
+    }
+}
+
+export default connect(mapDispatchToProps)(Code);

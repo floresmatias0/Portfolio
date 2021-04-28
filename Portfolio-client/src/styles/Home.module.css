@@ -8,6 +8,17 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: url('../assets//img/home.jpg');
+    background-image: url('../assets//img/home.gif');
     background-size: cover;
+}
+.container h1, .about h2, .about p{
+    font-family: 'New Tegomin', serif;
+    color: aliceblue;
+    text-shadow: 4px 4px 8px black;
+    text-align: center;
+}
+.about{
+    width: 30em;
+    border-radius: 1em;
+    box-shadow: 4px 4px 8px black;
 }
