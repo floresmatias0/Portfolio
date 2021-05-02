@@ -8,11 +8,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: url('../assets//img/home-new.gif');
+    background-image: url('../assets/img/home-new.gif');
     background-size: cover;
 }
 .container h1{
-    width: 33%;
     font-family: 'New Tegomin', serif;
     color: aliceblue;
     text-decoration: none;

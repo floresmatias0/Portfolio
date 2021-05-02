@@ -8,7 +8,9 @@ const Nav = () => {
       <div>
         <Link exact to='/home/aboutme'><h2>About me</h2></Link>
         <Link exact to='/home/projects'><h2>Projects</h2></Link>
-        <Link exact to='/home/skills'><h2>Skills</h2></Link> 
+        <Link exact to='/home/skills'><h2>Skills</h2></Link>
+        <Link exact to='/home/certificates'><h2>Certificates</h2></Link>
+        <Link exact to='/home/contact'><h2>Contact</h2></Link>
       </div>
 
     </div>
