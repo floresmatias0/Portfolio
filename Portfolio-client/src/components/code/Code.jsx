@@ -42,7 +42,6 @@ const Code = ({GET_VISIT}) => {
                 name: 'name is required!!'
             })
         }else{
-           GET_VISIT(input.name) 
            setInput({
             ...input,
             [e.target.name]: aux.push(input.name)
