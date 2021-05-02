@@ -1,0 +1,86 @@
+.container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../assets//img/home.gif');
+    background-size: cover;
+}
+.container h2{
+    font-family: 'New Tegomin', serif;
+    color: aliceblue;
+    text-shadow: 4px 4px 8px black;
+    text-align: center;
+}
+.container h2{
+    margin-top:0;
+}
+.slider{
+    width: 40em;
+    border-radius: 1em;
+    box-shadow: 4px 4px 8px black;
+    overflow: hidden;
+    backdrop-filter: blur(4px);
+}
+.slider ul{
+    display: flex;
+    width: 100%;
+    padding: 0;
+}
+.slider li{
+    width: 100%;
+    list-style: none;
+}
+.slider img{
+    display: flex;
+    border-radius: 0.5em;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid black;
+}
+.pages{
+    width: 8em;
+    height: 2em;
+    display: flex;
+    justify-content: center;
+    align-content:  center;
+    margin-left: auto;
+    margin-right: auto; 
+    margin-bottom:0;
+}
+.pages, .container button{
+    text-align: center;
+    font-family: 'New Tegomin', serif;
+    color: aliceblue;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 1.2rem;
+    border-radius: 0.5em;
+    box-shadow: 3px 3px 7px black;
+    backdrop-filter: blur(4px);
+}
+.pages:active, .container button:active{
+    transform: scale(0.95);
+}
+.pages:hover, .container button:hover{
+    background-color: rgba(240, 248, 255, 0.288);
+}
+.buttons{
+    display: flex;
+    flex-direction: row !important;
+    width: 100%;
+    justify-content: center;
+}
+.container button{
+    width: 2em;
+    margin-left:0.5em;
+    margin-right:0.5em;
+}

@@ -41,8 +41,7 @@ const Code = ({GET_VISIT}) => {
             setErrors({
                 name: 'name is required!!'
             })
-        }else{
-           GET_VISIT(input.name) 
+        }else{ 
            setInput({
             ...input,
             [e.target.name]: aux.push(input.name)
