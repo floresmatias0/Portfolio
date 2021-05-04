@@ -20,4 +20,8 @@
 .container button {
     width: 8em;
 }
+.container img {
+    width:20em;
+    border-radius: 50%;
+}
 

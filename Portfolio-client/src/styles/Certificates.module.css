@@ -49,9 +49,9 @@
     margin-right: auto;
 }
 .contentCertificates button{
-    width: 8em;
-    height: 2em;
+    width: 10em;
     display: flex;
+    height: 2em;
     justify-content: center;
     margin-top: 0.5em;
     margin-bottom: 1em;
@@ -63,7 +63,9 @@
     background: transparent;
     border: none;
     outline: none;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px black;
     border-radius: 0.5em;
     box-shadow: 3px 3px 7px black;
     backdrop-filter: blur(4px);

@@ -9,12 +9,13 @@ import nodejs from '../../assets/img/nodejs.png'
 import postgresql from '../../assets/img/postgresql.png'
 import react from '../../assets/img/react.png'
 import sequelize from '../../assets/img/sequelize.png'
+import {withTranslation} from 'react-i18next'
 
-const Skills = () => {
+const Skills = ({t}) => {
     return (
         <div className={styles.container}>
             <Nav/>
-            <h1>Tecnologias aprendidas hasta el momento</h1>
+            <h1>{t('skillTitle')}</h1>
             <div className={styles.skills}>
                 <ul>
                     <img src={react} alt='react'/>
@@ -33,4 +34,4 @@ const Skills = () => {
     )
 }
 
-export default Skills;
+export default withTranslation()(Skills);

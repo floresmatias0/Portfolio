@@ -5,8 +5,9 @@ import pokemon from '../../assets/img/pokemon.gif';
 import ombdMovies from '../../assets/img/ombdMovies.gif';
 import wheater from '../../assets/img/wheater-app.gif'
 import Nav from '../Nav/Nav'
+import {withTranslation} from 'react-i18next'
 
-const Projects = () => {
+const Projects = ({t}) => {
 
     var proyect = [animaniac,pokemon,wheater,ombdMovies]
   
@@ -38,9 +39,9 @@ const Projects = () => {
           <div className={styles.slider}>
             <ul>
               <li>
-                <h2>My projects</h2>
+                <h2>{t('titleProjects')}</h2>
                 <img id='slider' src={proyect[0]} alt='gif'/>
-                <h3 id='link' className={styles.pages} onClick={animaniacLink}>Go page</h3>
+                <h3 id='link' className={styles.pages} onClick={animaniacLink}>{t('buttonProjects')}</h3>
               </li>
             </ul>
             <ul className={styles.buttons}>
@@ -54,4 +55,4 @@ const Projects = () => {
     );
   }
   
-export default Projects;
+export default withTranslation()(Projects);

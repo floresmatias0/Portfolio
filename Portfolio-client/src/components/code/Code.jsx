@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { getVisit } from '../../store/visit/Visit.actions'
 import styles from '../../styles/Code.module.css';
 import '../../styles/Animations/animations.css';
+import Mati from '../../assets/img/mati.png'
 
 const Code = ({GET_VISIT}) => {
     var aux = [];
@@ -47,6 +48,14 @@ const Code = ({GET_VISIT}) => {
             [e.target.name]: aux.push(input.name)
             }) 
             setHidden(true) 
+            var storage = localStorage.getItem('name')
+            if(storage){
+                localStorage.clear()
+                localStorage.setItem('name',input.name)
+            }else{
+               return localStorage.setItem('name',input.name)
+            }
+            
         }  
     }
 
@@ -57,7 +66,6 @@ const Code = ({GET_VISIT}) => {
         } 
         return errors;
     };
-    
     const [codeRandom,setCodeRandom] = useState('')
     
     const code = () =>{ 
@@ -69,6 +77,7 @@ const Code = ({GET_VISIT}) => {
     return (
         <div className={styles.container}>
             <div className={hidden ? styles.hiddenCode : styles.displayName}>
+            <img className='expandOpen' src={Mati} alt='myphoto'/>
                 <form onSubmit={handleSubmit} >
                     <h2 className='pullUp'>Please insert your name to continue</h2>
                     <input className={styles.inputName} name='name' type='text' value={input.name} onChange={handleInputChange}/>
@@ -81,22 +90,22 @@ const Code = ({GET_VISIT}) => {
                 <input disabled value={numberCode} className={styles.inputCode}/>
             </div>
             <div className={hidden ? styles.buttons : styles.hiddenCode}>
-                <ul>
+                <ul className='slideRight'>
                     <li onClick={()=>handleChange("1")}>1</li>
                     <li onClick={()=>handleChange("2")}>2</li>
                     <li onClick={()=>handleChange("3")}>3</li>   
                 </ul>
-                <ul>
+                <ul className='slideRight'>
                     <li onClick={()=>handleChange("4")}>4</li>
                     <li onClick={()=>handleChange("5")}>5</li>
                     <li onClick={()=>handleChange("6")}>6</li>  
                 </ul>
-                <ul>
+                <ul className='slideRight'>
                     <li onClick={()=>handleChange("7")}>7</li>
                     <li onClick={()=>handleChange("8")}>8</li>
                     <li onClick={()=>handleChange("9")}>9</li>  
                 </ul>
-                <ul>
+                <ul className='slideRight'>
                     <li onClick={handleErase}>erase</li>
                     <li onClick={()=>handleChange("0")}>0</li>
                     <li onClick={()=>handleEnter()} >enter</li>   

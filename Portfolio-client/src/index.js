@@ -9,6 +9,7 @@ import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 import reducers from './store/index';
+import './i18n'
 
 const store = createStore(
   reducers,
