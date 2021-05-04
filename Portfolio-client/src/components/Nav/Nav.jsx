@@ -7,12 +7,12 @@ const Nav = ({t}) => {
   return (
     <div className={styles.navbar}>
       <div>
-        <Link exact to='/home'><h2>{t('inicio')}</h2></Link>
-        <Link exact to='/home/aboutme'><h2>{t('aboutTitle')}</h2></Link>
-        <Link exact to='/home/projects'><h2>{t('projects')}</h2></Link>
-        <Link exact to='/home/skills'><h2>{t('skills')}</h2></Link>
-        <Link exact to='/home/certificates'><h2>{t('certificates')}</h2></Link>
-        <Link exact to='/home/contact'><h2>{t('contact')}</h2></Link>
+        <Link to='/home'><h2>{t('inicio')}</h2></Link>
+        <Link to='/home/aboutme'><h2>{t('aboutTitle')}</h2></Link>
+        <Link to='/home/projects'><h2>{t('projects')}</h2></Link>
+        <Link to='/home/skills'><h2>{t('skills')}</h2></Link>
+        <Link to='/home/certificates'><h2>{t('certificates')}</h2></Link>
+        <Link to='/home/contact'><h2>{t('contact')}</h2></Link>
       </div>
 
     </div>

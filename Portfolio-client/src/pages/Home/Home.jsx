@@ -1,13 +1,24 @@
-import React from 'react';
+import React, {useEffect}from 'react';
 import { connect } from 'react-redux';
 import styles from '../../styles/Home.module.css';
 import Nav from '../../components/Nav/Nav'
 import i18n from '../../i18n';
 import {withTranslation} from 'react-i18next'
 import Swal from 'sweetalert2'
+import { useHistory } from 'react-router';
 
 const Home = ({t,STORE_VISIT}) => {
-    
+
+  const history = useHistory()
+  
+  useEffect(()=>{
+    var storage = localStorage.getItem('name')
+    if(!storage){
+      return history.push('/')
+    } 
+  },[history])
+  
+
   const changeLanguage = (Ing) =>{
     i18n.changeLanguage(Ing)
     Swal.fire({

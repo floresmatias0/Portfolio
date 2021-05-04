@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import Nav from '../Nav/Nav'
 import styles from '../../styles/Skills.module.css'
 import css from '../../assets/img/css.png'
@@ -10,8 +10,19 @@ import postgresql from '../../assets/img/postgresql.png'
 import react from '../../assets/img/react.png'
 import sequelize from '../../assets/img/sequelize.png'
 import {withTranslation} from 'react-i18next'
+import {useHistory} from 'react-router'
 
 const Skills = ({t}) => {
+
+    const history = useHistory()
+    
+    useEffect(()=>{
+      var storage = localStorage.getItem('name')
+      if(!storage){
+        return history.push('/')
+      } 
+    },[history])
+
     return (
         <div className={styles.container}>
             <Nav/>

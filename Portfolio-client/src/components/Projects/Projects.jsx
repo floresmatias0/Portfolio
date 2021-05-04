@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import styles from '../../styles/Projects.module.css'
 import animaniac from '../../assets/img/animaniacs.gif';
 import pokemon from '../../assets/img/pokemon.gif';
@@ -6,9 +6,18 @@ import ombdMovies from '../../assets/img/ombdMovies.gif';
 import wheater from '../../assets/img/wheater-app.gif'
 import Nav from '../Nav/Nav'
 import {withTranslation} from 'react-i18next'
+import {useHistory} from 'react-router'
 
 const Projects = ({t}) => {
-
+    const history = useHistory()
+    
+    useEffect(()=>{
+      var storage = localStorage.getItem('name')
+      if(!storage){
+        return history.push('/')
+      } 
+    },[history])
+  
     var proyect = [animaniac,pokemon,wheater,ombdMovies]
   
     const animaniacLink = () => window.open('http://104.236.92.12/') 

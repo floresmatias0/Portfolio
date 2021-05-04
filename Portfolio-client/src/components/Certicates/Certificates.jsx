@@ -1,13 +1,22 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import styles from '../../styles/Certificates.module.css'
 import Nav from '../Nav/Nav'
 import henry from '../../assets/img/henry-certificate.png'
 import efset from '../../assets/img/efset-certificate.png'
 import utn from '../../assets/img/utn-certicate.png'
 import {withTranslation} from 'react-i18next'
+import {useHistory} from 'react-router'
 
 const Certificates = ({t}) => {
+    const history = useHistory()
     
+    useEffect(()=>{
+      var storage = localStorage.getItem('name')
+      if(!storage){
+        return history.push('/')
+      } 
+    },[history])
+
     const goCertificateEfset = () => {
         window.open('https://www.efset.org/cert/vCMdaz')
     }

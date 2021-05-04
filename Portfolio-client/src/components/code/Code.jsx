@@ -5,8 +5,9 @@ import { getVisit } from '../../store/visit/Visit.actions'
 import styles from '../../styles/Code.module.css';
 import '../../styles/Animations/animations.css';
 import Mati from '../../assets/img/mati.png'
+import tecla from '../../assets/audio/button-click.mp3'
 
-const Code = ({GET_VISIT}) => {
+const Code = () => {
     var aux = [];
     var codes = ["432765","897654","532176"];
     const history = useHistory();
@@ -74,13 +75,20 @@ const Code = ({GET_VISIT}) => {
         setCodeRandom(codes[aux])
     }
 
+    var botonAudio = document.getElementById("play")		
+    botonAudio.addEventListener("click", ()=>{
+        let etiquetaAudio = document.createElement("audio")
+        etiquetaAudio.setAttribute("src", tecla )
+        etiquetaAudio.play()
+    })
+
     return (
         <div className={styles.container}>
             <div className={hidden ? styles.hiddenCode : styles.displayName}>
             <img className='expandOpen' src={Mati} alt='myphoto'/>
                 <form onSubmit={handleSubmit} >
                     <h2 className='pullUp'>Please insert your name to continue</h2>
-                    <input className={styles.inputName} name='name' type='text' value={input.name} onChange={handleInputChange}/>
+                    <input autoComplete='off' className={styles.inputName} name='name' type='text' value={input.name} onChange={handleInputChange}/>
                     {errors.name && errors.name === 'name is required!!' ? <p className='hatch'>{errors.name}</p> : <p></p>} 
                     <button type='submit' onClick={code}>Send</button>
                 </form>
@@ -91,24 +99,24 @@ const Code = ({GET_VISIT}) => {
             </div>
             <div className={hidden ? styles.buttons : styles.hiddenCode}>
                 <ul className='slideRight'>
-                    <li onClick={()=>handleChange("1")}>1</li>
-                    <li onClick={()=>handleChange("2")}>2</li>
-                    <li onClick={()=>handleChange("3")}>3</li>   
+                    <li id='play' onClick={()=>handleChange("1")}>1</li>
+                    <li id='play' onClick={()=>handleChange("2")}>2</li>
+                    <li id='play' onClick={()=>handleChange("3")}>3</li>   
                 </ul>
                 <ul className='slideRight'>
-                    <li onClick={()=>handleChange("4")}>4</li>
-                    <li onClick={()=>handleChange("5")}>5</li>
-                    <li onClick={()=>handleChange("6")}>6</li>  
+                    <li id='play' onClick={()=>handleChange("4")}>4</li>
+                    <li id='play' onClick={()=>handleChange("5")}>5</li>
+                    <li id='play' onClick={()=>handleChange("6")}>6</li>  
                 </ul>
                 <ul className='slideRight'>
-                    <li onClick={()=>handleChange("7")}>7</li>
-                    <li onClick={()=>handleChange("8")}>8</li>
-                    <li onClick={()=>handleChange("9")}>9</li>  
+                    <li id='play' onClick={()=>handleChange("7")}>7</li>
+                    <li id='play' onClick={()=>handleChange("8")}>8</li>
+                    <li id='play' onClick={()=>handleChange("9")}>9</li>  
                 </ul>
                 <ul className='slideRight'>
-                    <li onClick={handleErase}>erase</li>
-                    <li onClick={()=>handleChange("0")}>0</li>
-                    <li onClick={()=>handleEnter()} >enter</li>   
+                    <li id='play' onClick={handleErase}>erase</li>
+                    <li id='play' onClick={()=>handleChange("0")}>0</li>
+                    <li id='play' onClick={()=>handleEnter()} >enter</li>   
                 </ul>  
             </div>              
         </div>

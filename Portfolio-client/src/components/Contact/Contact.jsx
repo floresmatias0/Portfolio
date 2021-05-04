@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import Nav from '../Nav/Nav'
 import github from '../../assets/img/github.png'
 import twitter from '../../assets/img/gorjeo.png'
@@ -7,10 +7,21 @@ import linkedin from '../../assets/img/linkedin.png'
 import styles from '../../styles/Contact.module.css'
 import emailjs from 'emailjs-com';
 import {withTranslation} from 'react-i18next'
+import {useHistory} from 'react-router'
 
 const Contact = ({t}) => {
+
+    const history = useHistory()
+    
+    useEffect(()=>{
+      var storage = localStorage.getItem('name')
+      if(!storage){
+        return history.push('/')
+      } 
+    },[history])
+
     const goPage = () => window.open('https://github.com/floresmatias0')  
-    const goPageTwo = () => window.open('https://www.linkedin.com/in/matias-flores-2860ba124/')
+    const goPageTwo = () => window.open('https://www.linkedin.com/in/matias-leandro-flores/')
     const goPageThree = () => window.open('https://wa.me/541169047409')  
     const goPageFour = () => window.open('https://twitter.com/Matiasleandro_')
     
@@ -46,7 +57,7 @@ const Contact = ({t}) => {
                         <label className={styles.label}>{t('messageForm')}</label>
                         <textarea className={styles.textarea} name="message"/>
                         
-                        <input className={styles.submit} type="submit" value="Send"/>
+                        <input className={styles.submit} type="submit" value={t('sendForm')}/>
                     </form>
                 </div>
                 <div className={styles.contentImg}>

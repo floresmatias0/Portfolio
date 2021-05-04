@@ -31,7 +31,8 @@ const resources = {
       "nameForm": "name",
       "emailForm": "email",
       "subjectForm": "subject",
-      "messageForm": "message"
+      "messageForm": "message",
+      "sendForm": "Send"
     }
   },
   es: {
@@ -61,7 +62,8 @@ const resources = {
       "nameForm": "nombre",
       "emailForm": "mail",
       "subjectForm": "asunto",
-      "messageForm": "mensaje"
+      "messageForm": "mensaje",
+      "sendForm": "Enviar"
 
     }
   }
