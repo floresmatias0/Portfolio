@@ -18,7 +18,7 @@ const resources = {
       "title": "Hi",
       "titleTwo": "thanks for your visit",
       "subtitle": "choose a language",
-      'buttonText': "Great, seeing page in English!",
+      'buttonText': "Great you will see the page in English!",
       "inicio":"Home",
       "projects": "projects",
       "skills": "Skills",

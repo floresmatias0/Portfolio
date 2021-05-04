@@ -75,12 +75,9 @@ const Code = () => {
         setCodeRandom(codes[aux])
     }
 
-    var botonAudio = document.getElementById("play")		
-    botonAudio.addEventListener("click", ()=>{
-        let etiquetaAudio = document.createElement("audio")
-        etiquetaAudio.setAttribute("src", tecla )
-        etiquetaAudio.play()
-    })
+    // const [play, setPlay] = useState(false)
+    // const [pause, setPause] = useState(true)	
+    
 
     return (
         <div className={styles.container}>
@@ -99,24 +96,24 @@ const Code = () => {
             </div>
             <div className={hidden ? styles.buttons : styles.hiddenCode}>
                 <ul className='slideRight'>
-                    <li id='play' onClick={()=>handleChange("1")}>1</li>
-                    <li id='play' onClick={()=>handleChange("2")}>2</li>
-                    <li id='play' onClick={()=>handleChange("3")}>3</li>   
+                    <li onClick={()=>handleChange("1")}>1</li>
+                    <li onClick={()=>handleChange("2")}>2</li>
+                    <li onClick={()=>handleChange("3")}>3</li>   
                 </ul>
                 <ul className='slideRight'>
-                    <li id='play' onClick={()=>handleChange("4")}>4</li>
-                    <li id='play' onClick={()=>handleChange("5")}>5</li>
-                    <li id='play' onClick={()=>handleChange("6")}>6</li>  
+                    <li onClick={()=>handleChange("4")}>4</li>
+                    <li onClick={()=>handleChange("5")}>5</li>
+                    <li onClick={()=>handleChange("6")}>6</li>  
                 </ul>
                 <ul className='slideRight'>
-                    <li id='play' onClick={()=>handleChange("7")}>7</li>
-                    <li id='play' onClick={()=>handleChange("8")}>8</li>
-                    <li id='play' onClick={()=>handleChange("9")}>9</li>  
+                    <li onClick={()=>handleChange("7")}>7</li>
+                    <li onClick={()=>handleChange("8")}>8</li>
+                    <li onClick={()=>handleChange("9")}>9</li>  
                 </ul>
                 <ul className='slideRight'>
-                    <li id='play' onClick={handleErase}>erase</li>
-                    <li id='play' onClick={()=>handleChange("0")}>0</li>
-                    <li id='play' onClick={()=>handleEnter()} >enter</li>   
+                    <li onClick={handleErase}>erase</li>
+                    <li onClick={()=>handleChange("0")}>0</li>
+                    <li onClick={()=>handleEnter()} >enter</li>   
                 </ul>  
             </div>              
         </div>

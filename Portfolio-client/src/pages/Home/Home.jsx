@@ -22,7 +22,14 @@ const Home = ({t,STORE_VISIT}) => {
   const changeLanguage = (Ing) =>{
     i18n.changeLanguage(Ing)
     Swal.fire({
-      text: t('buttonText')
+        buttonsStyling: false,
+        customClass: {
+            popup: styles.customPopup,
+            confirmButton: styles.customButton,
+            content: styles.customTitle
+          },
+        text: t('buttonText'),
+        confirmButtonText: 'Cool',
     })
   }
 
